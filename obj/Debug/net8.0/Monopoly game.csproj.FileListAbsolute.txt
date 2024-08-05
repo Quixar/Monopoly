@@ -1,0 +1,28 @@
+D:\Проекты\Monopoly game\bin\Debug\net8.0\Monopoly game.exe
+D:\Проекты\Monopoly game\bin\Debug\net8.0\Monopoly game.deps.json
+D:\Проекты\Monopoly game\bin\Debug\net8.0\Monopoly game.runtimeconfig.json
+D:\Проекты\Monopoly game\bin\Debug\net8.0\Monopoly game.dll
+D:\Проекты\Monopoly game\bin\Debug\net8.0\Monopoly game.pdb
+D:\Проекты\Monopoly game\obj\Debug\net8.0\Monopoly game.GeneratedMSBuildEditorConfig.editorconfig
+D:\Проекты\Monopoly game\obj\Debug\net8.0\Monopoly game.AssemblyInfoInputs.cache
+D:\Проекты\Monopoly game\obj\Debug\net8.0\Monopoly game.AssemblyInfo.cs
+D:\Проекты\Monopoly game\obj\Debug\net8.0\Monopoly game.csproj.CoreCompileInputs.cache
+D:\Проекты\Monopoly game\obj\Debug\net8.0\Monopoly game.dll
+D:\Проекты\Monopoly game\obj\Debug\net8.0\refint\Monopoly game.dll
+D:\Проекты\Monopoly game\obj\Debug\net8.0\Monopoly game.pdb
+D:\Проекты\Monopoly game\obj\Debug\net8.0\Monopoly game.genruntimeconfig.cache
+D:\Проекты\Monopoly game\obj\Debug\net8.0\ref\Monopoly game.dll
+D:\Проекты\Monopoly_game\bin\Debug\net8.0\Monopoly game.exe
+D:\Проекты\Monopoly_game\bin\Debug\net8.0\Monopoly game.deps.json
+D:\Проекты\Monopoly_game\bin\Debug\net8.0\Monopoly game.runtimeconfig.json
+D:\Проекты\Monopoly_game\bin\Debug\net8.0\Monopoly game.dll
+D:\Проекты\Monopoly_game\bin\Debug\net8.0\Monopoly game.pdb
+D:\Проекты\Monopoly_game\obj\Debug\net8.0\Monopoly game.GeneratedMSBuildEditorConfig.editorconfig
+D:\Проекты\Monopoly_game\obj\Debug\net8.0\Monopoly game.AssemblyInfoInputs.cache
+D:\Проекты\Monopoly_game\obj\Debug\net8.0\Monopoly game.AssemblyInfo.cs
+D:\Проекты\Monopoly_game\obj\Debug\net8.0\Monopoly game.csproj.CoreCompileInputs.cache
+D:\Проекты\Monopoly_game\obj\Debug\net8.0\Monopoly game.dll
+D:\Проекты\Monopoly_game\obj\Debug\net8.0\refint\Monopoly game.dll
+D:\Проекты\Monopoly_game\obj\Debug\net8.0\Monopoly game.pdb
+D:\Проекты\Monopoly_game\obj\Debug\net8.0\Monopoly game.genruntimeconfig.cache
+D:\Проекты\Monopoly_game\obj\Debug\net8.0\ref\Monopoly game.dll
