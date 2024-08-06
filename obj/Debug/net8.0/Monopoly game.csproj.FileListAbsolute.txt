@@ -26,3 +26,4 @@ D:\Проекты\Monopoly_game\obj\Debug\net8.0\refint\Monopoly game.dll
 D:\Проекты\Monopoly_game\obj\Debug\net8.0\Monopoly game.pdb
 D:\Проекты\Monopoly_game\obj\Debug\net8.0\Monopoly game.genruntimeconfig.cache
 D:\Проекты\Monopoly_game\obj\Debug\net8.0\ref\Monopoly game.dll
+D:\Проекты\Monopoly_game\obj\Debug\net8.0\Monopoly game.sourcelink.json
