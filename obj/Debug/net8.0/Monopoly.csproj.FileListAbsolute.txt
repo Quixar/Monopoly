@@ -1,0 +1,14 @@
+/Users/quixar/vscode/Monopoly/bin/Debug/net8.0/Monopoly
+/Users/quixar/vscode/Monopoly/bin/Debug/net8.0/Monopoly.deps.json
+/Users/quixar/vscode/Monopoly/bin/Debug/net8.0/Monopoly.runtimeconfig.json
+/Users/quixar/vscode/Monopoly/bin/Debug/net8.0/Monopoly.dll
+/Users/quixar/vscode/Monopoly/bin/Debug/net8.0/Monopoly.pdb
+/Users/quixar/vscode/Monopoly/obj/Debug/net8.0/Monopoly.GeneratedMSBuildEditorConfig.editorconfig
+/Users/quixar/vscode/Monopoly/obj/Debug/net8.0/Monopoly.AssemblyInfoInputs.cache
+/Users/quixar/vscode/Monopoly/obj/Debug/net8.0/Monopoly.AssemblyInfo.cs
+/Users/quixar/vscode/Monopoly/obj/Debug/net8.0/Monopoly.csproj.CoreCompileInputs.cache
+/Users/quixar/vscode/Monopoly/obj/Debug/net8.0/Monopoly.dll
+/Users/quixar/vscode/Monopoly/obj/Debug/net8.0/refint/Monopoly.dll
+/Users/quixar/vscode/Monopoly/obj/Debug/net8.0/Monopoly.pdb
+/Users/quixar/vscode/Monopoly/obj/Debug/net8.0/Monopoly.genruntimeconfig.cache
+/Users/quixar/vscode/Monopoly/obj/Debug/net8.0/ref/Monopoly.dll
