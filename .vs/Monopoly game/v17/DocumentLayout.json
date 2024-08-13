@@ -5,6 +5,9 @@
     {
       "AbsoluteMoniker": "D:0:0:{CF7BD1CB-E3AC-4D0F-9846-6DA9E3A1647E}|Monopoly game.csproj|d:\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\monopoly_game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF7BD1CB-E3AC-4D0F-9846-6DA9E3A1647E}|Monopoly game.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\\u0414\u0432\u0443\u043C\u0435\u0440\u043D\u044B\u0435 \u043C\u0430\u0441\u0441\u0438\u0432\u044B c#\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,9 +27,23 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\Monopoly_game\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAAAEAAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAAAowEQAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-27T21:08:41.681Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\\u0414\u0432\u0443\u043C\u0435\u0440\u043D\u044B\u0435 \u043C\u0430\u0441\u0441\u0438\u0432\u044B c#\\Program.cs",
+              "RelativeDocumentMoniker": "..\\\u0414\u0432\u0443\u043C\u0435\u0440\u043D\u044B\u0435 \u043C\u0430\u0441\u0441\u0438\u0432\u044B c#\\Program.cs",
+              "ToolTip": "D:\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\\u0414\u0432\u0443\u043C\u0435\u0440\u043D\u044B\u0435 \u043C\u0430\u0441\u0441\u0438\u0432\u044B c#\\Program.cs",
+              "RelativeToolTip": "..\\\u0414\u0432\u0443\u043C\u0435\u0440\u043D\u044B\u0435 \u043C\u0430\u0441\u0441\u0438\u0432\u044B c#\\Program.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T14:50:50.053Z",
               "EditorCaption": ""
             }
           ]
