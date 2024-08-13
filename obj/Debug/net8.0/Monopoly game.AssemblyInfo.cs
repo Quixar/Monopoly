@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Monopoly game")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa2036d61126fd244e9a54f63d98554c83dd361f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efa102406485d041969728b325bd810dbf27e597")]
 [assembly: System.Reflection.AssemblyProductAttribute("Monopoly game")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Monopoly game")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

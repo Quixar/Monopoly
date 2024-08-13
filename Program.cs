@@ -26,9 +26,9 @@ namespace Monopoly_game
 
         public void CreateField()
         {
-            for (int i = 0; i < this.height; i++)
+            for (int i = 0; i < 4; i++)
             {
-                for (int j = 0; j < this.length; j++)
+                for (int j = 0; j < 5; j++)
                 {
                     if (i == 0 || j == 0 || i == this.height - 1 || j == this.length - 1)
                     {
@@ -45,9 +45,9 @@ namespace Monopoly_game
 
         public void Print()
         {
-            for (int i = 0; i < height; i++)
+            for (int i = 0; i < 4; i++)
             {
-                for (int j = 0; j < length; j++)
+                for (int j = 0; j < 5; j++)
                 {
                     Console.Write(field[i, j]);
                 }
@@ -57,14 +57,14 @@ namespace Monopoly_game
     }
 
     public class Field
-    {  
-        Case[,] field;
+    {
+        Case[,] field = new Case[4, 5];
 
         public Field()
         {
-            for(int i = 0; i < 4 ; i++)
+            for(int i = 0; i < field.GetLength(0) ; i++)
             {
-                for(int j = 0; j < 5; j++)
+                for(int j = 0; j < field.GetLength(1); j++)
                 {
                     this.field[i, j] = new Case(5, 15);
                 }
@@ -102,6 +102,7 @@ namespace Monopoly_game
             Console.SetWindowSize(Console.LargestWindowWidth, Console.LargestWindowHeight);
             
             Console.SetWindowPosition(Console.WindowLeft, Console.WindowTop);
+
             Field field = new Field();
             field.CreateField();
             field.PrintField();
