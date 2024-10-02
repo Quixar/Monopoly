@@ -12,3 +12,4 @@
 /Users/quixar/vscode/Monopoly/obj/Debug/net8.0/Monopoly.pdb
 /Users/quixar/vscode/Monopoly/obj/Debug/net8.0/Monopoly.genruntimeconfig.cache
 /Users/quixar/vscode/Monopoly/obj/Debug/net8.0/ref/Monopoly.dll
+/Users/quixar/vscode/Monopoly/obj/Debug/net8.0/Monopoly.sourcelink.json
