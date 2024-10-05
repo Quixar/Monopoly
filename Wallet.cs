@@ -1,10 +1,14 @@
 class Wallet
 {
-    public double AmountMoney {get; private set; }
+    public double AmountMoney {get; set; }
 
     public Wallet(double amountMoney)
     {
-        this.AmountMoney = amountMoney;
+        AmountMoney = amountMoney;
     }
     
+    public Wallet() : this(1000)
+    {
+
+    }
 }

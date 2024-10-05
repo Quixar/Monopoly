@@ -6,8 +6,7 @@ class House
         Price = price;
     }
 
-    public House()
+    public House() : this(100)
     {
-        Price = 0;
     }
 }

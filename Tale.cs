@@ -5,11 +5,13 @@ class Tale
     public double Price { get; private set; }
     public double RentPrice { get; private set; }
     List<House> houses;
-    int maxHouses = 3;
+    List<Hotel> hotels;
+    int maxHouses = 4;
 
     public Tale(string name, double price, double rentPrice)
     {
         houses = new List<House>();
+        hotels = new List<Hotel>();
         Name = name;
         Price = price;
         RentPrice = rentPrice;
@@ -33,5 +35,38 @@ class Tale
         {
 
         }
+    }
+
+    public void BuyHotel(Wallet wallet, Hotel hotel)
+    {
+        if(houses.Count == maxHouses && wallet.AmountMoney > hotel.Price)
+        {
+            wallet.AmountMoney -= hotel.Price;
+            hotels.Add(new Hotel());
+            houses.Clear();
+        }
+        else
+        {
+
+        }
+    }
+
+    public void BuyTale(Wallet wallet)
+    {
+        if(!IsSold && wallet.AmountMoney > Price)
+        {
+            wallet.AmountMoney -= Price;
+            IsSold = true;
+        }
+        else
+        {
+            
+        }
+    }
+
+    public double CalculateRent()
+    {
+
+        return 0;
     }
 }
