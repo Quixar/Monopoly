@@ -8,7 +8,7 @@ namespace Monopoly_game
     {
         static void Main(string[] args)
         {
-
+            
         }
     }
 }

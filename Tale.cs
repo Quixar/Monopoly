@@ -1,66 +1,17 @@
-class Tale
+abstract class Tale
 {
     public string Name { get; set; }
-    public bool IsSold { get; set; }
-    public double Price { get; private set; }
-    public double RentPrice { get; private set; }
-    List<House> houses;
-    Hotel hotel;
-    int maxHouses = 4;
 
-    public Tale(string name, double price, double rentPrice)
+    public Tale(string name)
     {
-        houses = new List<House>();
-        hotel = null;
         Name = name;
-        Price = price;
-        RentPrice = rentPrice;
-        IsSold = false;
     }
 
-    public void BuyHouse(Wallet wallet, House house)
+    abstract public void Draw();
+    public void ShowInfo(string text)
     {
-        if(houses.Count <= 4 
-        && wallet.AmountMoney >= house.Price 
-        && hotel == null)
-        {
-            houses.Add(new House());
-        }
-        else
-        {
-
-        }
+        System.Console.WriteLine(text);
     }
 
-    public void BuyHotel(Wallet wallet)
-    {
-        if(houses.Count == maxHouses && wallet.AmountMoney >= hotel.Price)
-        {
-            wallet.AmountMoney -= hotel.Price;
-            hotel = new Hotel();
-            houses.Clear();
-        }
-        else
-        {
-
-        }
-    }
-
-    public void BuyTale(Wallet wallet)
-    {
-        if(!IsSold && wallet.AmountMoney >= Price)
-        {
-            wallet.AmountMoney -= Price;
-            IsSold = true;
-        }
-        else
-        {
-            
-        }
-    }
-
-    public double CalculateRent()
-    {
-        return 0;
-    }
+    abstract public void OnStep(Player player);
 }
