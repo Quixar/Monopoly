@@ -3,7 +3,7 @@ class RailroadTale : PropertyTale, IPurchasable
     public int maxRoad { get; private set; }
     public RailroadTale(string name, int price, int propertySellPrice) : base(name, price, propertySellPrice)
     {
-
+        maxRoad = 4;
     }
 
     public override void Draw()
@@ -13,11 +13,26 @@ class RailroadTale : PropertyTale, IPurchasable
 
     public void BuyTale(Player buyer)
     {
-        throw new NotImplementedException();
+        if (owner == null)
+        {
+            if (buyer.wallet.AmountMoney >= Price)
+            {
+                buyer.wallet.AmountMoney -= Price;
+                owner = buyer;
+            }
+        }
     }
 
     public void SellTale(Player buyer, Player seller)
     {
-        throw new NotImplementedException();
+        if (owner != null)
+        {
+            if (buyer.wallet.AmountMoney >= PropertySellPrice)
+            {
+                buyer.wallet.AmountMoney -= PropertySellPrice;
+                seller.wallet.AmountMoney += PropertySellPrice;
+                owner = buyer;
+            }
+        }
     }
 }

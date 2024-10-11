@@ -4,7 +4,7 @@ using System.Net.Mail;
 
 class Map : IEnumerable
 {
-    List<Tale> map = new List<Tale>();
+    public List<Tale> map = new List<Tale>();
 
     public Tale this[int index]
     {

@@ -1,7 +1,6 @@
 class PropertyTale : Tale
 {
     public int Price { get; set; }
-    public bool IsSold { get; set; }
     public int PropertySellPrice { get; set; }
     public Player owner;
 
@@ -10,7 +9,6 @@ class PropertyTale : Tale
         owner = null;
         Price = price;
         PropertySellPrice = propertySellPrice;
-        IsSold = false;
     }
 
     public override void Draw()
@@ -22,6 +20,6 @@ class PropertyTale : Tale
 
     public override void OnStep(Player player)
     {
-        
+
     }
 }
