@@ -7,7 +7,7 @@ class Hotel
         Price = price;
     }
 
-    public Hotel() : this(100)
+    public Hotel() : this(150)
     {
         
     }

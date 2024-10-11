@@ -7,7 +7,7 @@ class Wallet
         AmountMoney = amountMoney;
     }
     
-    public Wallet() : this(1000)
+    public Wallet() : this(1500)
     {
 
     }

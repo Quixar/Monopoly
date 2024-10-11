@@ -11,12 +11,12 @@ class RailroadTale : PropertyTale, IPurchasable
 
     }
 
-    public void BuyTale(Wallet buyerWallet)
+    public void BuyTale(Player buyer)
     {
         throw new NotImplementedException();
     }
 
-    public void SellTale(Wallet buyerWallet, Wallet sellerWallet)
+    public void SellTale(Player buyer, Player seller)
     {
         throw new NotImplementedException();
     }

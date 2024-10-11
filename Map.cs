@@ -1,19 +1,36 @@
 using System;
 using System.Collections;
+using System.Net.Mail;
 
 class Map : IEnumerable
 {
-    List<Tale> map;
+    List<Tale> map = new List<Tale>();
 
-    public IEnumerator GetEnumerator()
+    public Tale this[int index]
     {
-        throw new NotImplementedException();
+        get
+        {
+            if(index >= 0 && index < map.Count)
+            {
+                return map[index];
+            }
+            throw new ArgumentOutOfRangeException("Invalid index");
+        }
+    }
+
+    public MapEnumerator GetEnumerator()
+    {
+        return new MapEnumerator(map);
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 
     public void Temp()
     {
 
         map[0] = new EventTale("Start");
-        //map[0].OnTaleStep += (player) => 
     }
 }

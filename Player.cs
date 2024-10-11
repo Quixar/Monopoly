@@ -1,6 +1,6 @@
 class Player
 {
-    Wallet wallet;
+    public Wallet wallet;
     Map map;
     int currentPosition;
 
