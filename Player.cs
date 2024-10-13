@@ -4,16 +4,32 @@ class Player
     Map map;
     Dice dice = new Dice();
     int currentPosition;
+    public bool isBankrupt;
     public string Name { get; set; }
+    int turnsToSkip;
 
-    public Player(Map map)
+    public Player(Map map, string name)
     {
+        Name = name;
+        wallet = new Wallet(1500);
+        isBankrupt = false;
         this.map = map;
         currentPosition = 0;
+        turnsToSkip = 0;
     }
 
     public void NextStep()
     {
+        if (turnsInJale > 0)
+        {
+            turnsInJale--;
+            return;
+        }
+        if (isBankrupt)
+        {
+            return;
+        }
+
         int rollValue = dice.Roll();
         map[currentPosition + rollValue].OnStep(this); 
         currentPosition += rollValue;
@@ -57,7 +73,8 @@ class Player
             } 
             else 
             {
-                Console.WriteLine($"{Name} doesn't have enough money to pay rent!"); // ToDo - логика проигрыша
+                Console.WriteLine($"{Name} doesn't have enough money to pay rent!");
+                DeclareBankrupt(tale.owner);
             }
         }
     }
@@ -93,7 +110,8 @@ class Player
             } 
             else 
             {
-                Console.WriteLine($"{Name} doesn't have enough money to pay rent!"); // ToDo - логика проигрыша
+                Console.WriteLine($"{Name} doesn't have enough money to pay rent!");
+                DeclareBankrupt(railroad.owner);
             }
         }
     }
@@ -109,5 +127,35 @@ class Player
             }
         }
         return count;
+    }
+
+    public void TransferProperty(Player creditor)
+    {
+        foreach (PropertyTale tale in map)
+        {
+            if (tale.owner == this)
+            {
+                tale.owner = creditor;
+            }
+        }
+
+        creditor.wallet.AmountMoney += this.wallet.AmountMoney;
+        wallet.AmountMoney = 0;
+    }
+
+    public void DeclareBankrupt(Player creditor)
+    {
+        TransferProperty(creditor);
+        isBankrupt = true;
+    }
+
+    public void GoToJail()
+    {
+        turnsToSkip = 3;
+    }
+
+    public void GoToParking()
+    {
+        turnsToSkip = 1;
     }
 }
