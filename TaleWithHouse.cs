@@ -10,10 +10,15 @@ class TaleWithHouse : PropertyTale, IPurchasable
     public int Rent6 { get; set;}
     readonly int maxHouses = 4;
 
-    public TaleWithHouse(string name, int price, int propertySellPrice) 
+    public TaleWithHouse(string name, int price, int rent1, int rent2, int rent3, int rent4, int rent5, int rent6, int propertySellPrice) 
     : base(name, price, propertySellPrice)
     {
-
+        Rent1 = rent1;
+        Rent2 = rent2;
+        Rent3 = rent3;
+        Rent4 = rent4;
+        Rent5 = rent5;
+        Rent6 = rent6;
         houses = new List<House>();
         hotel = null;
         
@@ -84,7 +89,7 @@ class TaleWithHouse : PropertyTale, IPurchasable
         }
         else if (owner != null && owner != player)
         {
-            player.PayRent();
+            player.PayRentForTaleWithHouse();
             player.NextStep();
         }
         else if (player == owner)

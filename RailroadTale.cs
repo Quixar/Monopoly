@@ -1,9 +1,16 @@
 class RailroadTale : PropertyTale, IPurchasable
 {
-    public int maxRoad { get; private set; }
-    public RailroadTale(string name, int price, int propertySellPrice) : base(name, price, propertySellPrice)
+    readonly int maxRoad = 4;
+    public int Rent1 { get; set; }
+    public int Rent2 { get; set; }
+    public int Rent3 { get; set; }
+    public int Rent4 { get; set; }
+    public RailroadTale(string name, int price, int rent1, int rent2, int rent3,int rent4, int propertySellPrice) : base(name, price, propertySellPrice)
     {
-        maxRoad = 4;
+        Rent1 = rent1;
+        Rent2 = rent2;
+        Rent3 = rent3;
+        Rent4 = rent4;
     }
 
     public override void Draw()
@@ -35,4 +42,6 @@ class RailroadTale : PropertyTale, IPurchasable
             }
         }
     }
+
+    public override 
 }

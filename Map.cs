@@ -30,7 +30,6 @@ class Map : IEnumerable
 
     public void Temp()
     {
-
         map[0] = new EventTale("Start");
     }
 }
