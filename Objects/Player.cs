@@ -3,8 +3,8 @@ using System.Buffers;
 class Player
     {
         public Wallet wallet;
-        Map map;
-        Dice dice = new Dice();
+        public Map map;
+        public Dice dice = new Dice();
         public int currentPosition;
         public bool isBankrupt;
         public string Name { get; set; }
