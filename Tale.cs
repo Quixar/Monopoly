@@ -7,7 +7,6 @@ abstract class Tale
         Name = name;
     }
 
-    abstract public void Draw();
     public void ShowInfo(string text)
     {
         System.Console.WriteLine(text);

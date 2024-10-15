@@ -5,11 +5,6 @@ class EventTale : Tale
         Name = name;
     }
 
-    public override void Draw()
-    {
-        throw new NotImplementedException();
-    }
-
     public override void OnStep(Player player)
     {
         

@@ -11,13 +11,6 @@ class PropertyTale : Tale
         PropertySellPrice = price / 2;
     }
 
-    public override void Draw()
-    {
-        System.Console.WriteLine(Name);
-        System.Console.WriteLine(Price);
-        System.Console.WriteLine(PropertySellPrice);
-    }
-
     public override void OnStep(Player player)
     {
 

@@ -23,11 +23,6 @@ class RailroadTale : PropertyTale, IPurchasable
         Rent4 = 200;
     }
 
-    public override void Draw()
-    {
-
-    }
-
     public void BuyTale(Player buyer)
     {
         if (owner == null)
@@ -53,5 +48,8 @@ class RailroadTale : PropertyTale, IPurchasable
         }
     }
 
-    public override 
+    public override void OnStep(Player player)
+    {
+        base.OnStep(player);
+    }
 }
