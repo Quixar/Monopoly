@@ -73,39 +73,47 @@ class TaleWithHouse : PropertyTale, IPurchasable
 
     public override void OnStep(Player player)
     {
-        string? choice;
         if (owner == null)
         {
-            System.Console.WriteLine($"Do you want to buy {Name} tale? 1 - Yes | 2 - No");
-            choice = Console.ReadLine();
-            if (choice == "1")
+            Console.WriteLine($"Player {player.Name}, do you want to buy {Name} for {Price}? (Y/N)");
+
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+            if (keyInfo.Key == ConsoleKey.Y)
             {
-                BuyTale(player);
-                player.NextStep();
+                if (player.wallet.AmountMoney >= Price)
+                {
+                    BuyTale(player);
+                }
+                else
+                {
+                }
             }
-            else
+            else if (keyInfo.Key == ConsoleKey.N)
             {
-                player.NextStep();
             }
         }
         else if (owner != null && owner != player)
         {
             player.PayRentForTaleWithHouse();
-            player.NextStep();
         }
         else if (player == owner)
         {
-            System.Console.WriteLine("Do you want to buy a house for your tale? 1 - Yes | 2 - No");
-            choice = Console.ReadLine();
-            if (choice == "1")
+            Console.WriteLine($"Player {player.Name}, do you want to buy a house on {Name}? (Y/N)");
+
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+            if (keyInfo.Key == ConsoleKey.Y)
             {
                 BuyHouse(player);
-                player.NextStep();
+                Console.WriteLine($"{player.Name} bought a house on {Name}.");
             }
-            else if (choice == "2")
+            else if (keyInfo.Key == ConsoleKey.N)
             {
-                player.NextStep();
+                Console.WriteLine($"{player.Name} decided not to buy a house on {Name}.");
             }
         }
+
+        player.NextStep();
     }
 }

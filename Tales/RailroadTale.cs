@@ -13,7 +13,6 @@ class RailroadTale : PropertyTale, IPurchasable
         Rent3 = rent3;
         Rent4 = rent4;
     }
-
     public RailroadTale() : base("Railroad", 200)
     {
         PropertySellPrice = 100;
@@ -22,7 +21,6 @@ class RailroadTale : PropertyTale, IPurchasable
         Rent3 = 100;
         Rent4 = 200;
     }
-
     public void BuyTale(Player buyer)
     {
         if (owner == null)
@@ -34,7 +32,6 @@ class RailroadTale : PropertyTale, IPurchasable
             }
         }
     }
-
     public void SellTale(Player buyer, Player seller)
     {
         if (owner != null)
@@ -47,9 +44,37 @@ class RailroadTale : PropertyTale, IPurchasable
             }
         }
     }
-
     public override void OnStep(Player player)
     {
-        base.OnStep(player);
+        if (owner == null)
+        {
+            Console.WriteLine($"Player {player.Name}, do you want to buy {Name} for {Price}? (Y/N)");
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+            if (keyInfo.Key == ConsoleKey.Y)
+            {
+                if (player.wallet.AmountMoney >= Price)
+                {
+                    BuyTale(player);
+                    Console.WriteLine($"{player.Name} bought {Name} for {Price}.");
+                }
+                else
+                {
+                    Console.WriteLine($"{player.Name} doesn't have enough money to buy {Name}.");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"{player.Name} decided not to buy {Name}.");
+            }
+        }
+        else if (owner != null && owner != player)
+        {
+            player.PayRentForRailroadTale();
+        }
+        else if (player == owner)
+        {
+            Console.WriteLine($"Player {player.Name} already owns {Name}.");
+        }
+        player.NextStep();
     }
 }

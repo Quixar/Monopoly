@@ -42,4 +42,41 @@ class UtilityTale : PropertyTale, IPurchasable
             }
         }
     }
+
+    public override void OnStep(Player player)
+    {
+        if (owner == null)
+        {
+            Console.WriteLine($"Player {player.Name}, do you want to buy {Name} for {Price}? (Y/N)");
+
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+            if (keyInfo.Key == ConsoleKey.Y)
+            {
+                if (player.wallet.AmountMoney >= Price)
+                {
+                    BuyTale(player);
+                    Console.WriteLine($"{player.Name} bought {Name} for {Price}.");
+                }
+                else
+                {
+                    Console.WriteLine($"{player.Name} doesn't have enough money to buy {Name}.");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"{player.Name} decided not to buy {Name}.");
+            }
+        }
+        else if (owner != null && owner != player)
+        {
+            player.PayRentForUtilityTale();
+        }
+        else if (player == owner)
+        {
+            Console.WriteLine($"Player {player.Name} already owns {Name}.");
+        }
+
+        player.NextStep();
+    }
 }

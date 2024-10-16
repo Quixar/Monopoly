@@ -1,13 +1,13 @@
 using System.Collections;
 
-class MapEnumerator : IEnumerator
+class PlayerEnumerator : IEnumerator
 {
-    List<Tale> map;
-    int position = -1;
+    private List<Player> players;
+    private int position = -1;
 
-    public MapEnumerator(List<Tale> map)
+    public PlayerEnumerator(List<Player> players)
     {
-        this.map = map;
+        this.players = players;
     }
 
     object IEnumerator.Current
@@ -18,19 +18,19 @@ class MapEnumerator : IEnumerator
         }
     }
 
-    public Tale Current
+    public Player Current
     {
         get
         {
-            if (position < 0 || position >= map.Count)
+            if (position < 0 || position >= players.Count)
                 throw new InvalidOperationException();
-            return map[position];
+            return players[position];
         }
     }
 
     public bool MoveNext()
     {
-        if (position < map.Count - 1)
+        if (position < players.Count - 1)
         {
             position++;
             return true;
