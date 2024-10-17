@@ -97,16 +97,29 @@ class TaleWithHouse : PropertyTale, IPurchasable
             if (keyInfo.Key == ConsoleKey.Y)
             {
                 BuyTale(player);
+                Console.SetCursorPosition(120, cursorY++);
+                System.Console.WriteLine($"Player {player.Name} decided to buy {Name} tale");
+                Console.SetCursorPosition(120, cursorY++);
+                System.Console.WriteLine("Press any key to continue");
+                keyInfo = Console.ReadKey(true);
             }
             else if (keyInfo.Key == ConsoleKey.N)
             {
                 Console.SetCursorPosition(120, cursorY++);
                 System.Console.WriteLine($"Player {player.Name} decided not to buy {Name} tale");
+                Console.SetCursorPosition(120, cursorY++);
+                System.Console.WriteLine("Press any key to continue");
+                keyInfo = Console.ReadKey(true);
             }
         }
         else if (owner != null && owner != player)
         {
             player.PayRentForTaleWithHouse();
+            Console.SetCursorPosition(120, cursorY++);
+            System.Console.WriteLine($"Player {player.Name} paid player {owner.Name} rent {player.rentToPay} for {Name} tale");
+            Console.SetCursorPosition(120, cursorY++);
+            System.Console.WriteLine("Press any key to continue");
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
         }
         else if (player == owner)
         {
@@ -122,11 +135,17 @@ class TaleWithHouse : PropertyTale, IPurchasable
                     BuyHouse(player);
                     Console.SetCursorPosition(120, cursorY++);
                     Console.WriteLine($"{player.Name} bought a house on {Name}.");
+                    Console.SetCursorPosition(120, cursorY++);
+                    System.Console.WriteLine("Press any key to continue");
+                    keyInfo = Console.ReadKey(true);
                 }
                 else if (keyInfo.Key == ConsoleKey.N)
                 {
                     Console.SetCursorPosition(120, cursorY++);
                     Console.WriteLine($"{player.Name} decided not to buy a house on {Name}.");
+                    Console.SetCursorPosition(120, cursorY++);
+                    System.Console.WriteLine("Press any key to continue");
+                    keyInfo = Console.ReadKey(true);
                 }
             }
             else if (houses.Count == maxHouses && hotel == null)
@@ -141,12 +160,18 @@ class TaleWithHouse : PropertyTale, IPurchasable
                     BuyHotel(player);
                     Console.SetCursorPosition(120, cursorY++);
                     Console.WriteLine($"{player.Name} bought a hotel on {Name}.");
+                    Console.SetCursorPosition(120, cursorY++);
+                    System.Console.WriteLine("Press any key to continue");
+                    keyInfo = Console.ReadKey(true);
                 }
 
                 else if (keyInfo.Key == ConsoleKey.N)
                 {
                     Console.SetCursorPosition(120, cursorY++);
                     Console.WriteLine($"{player.Name} decided not to buy a hotel on {Name}.");
+                    Console.SetCursorPosition(120, cursorY++);
+                    System.Console.WriteLine("Press any key to continue");
+                    keyInfo = Console.ReadKey(true);
                 }
             }
         }

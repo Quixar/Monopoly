@@ -51,7 +51,7 @@ class RailroadTale : PropertyTale, IPurchasable
         if (owner == null)
         {
             Console.SetCursorPosition(120, cursorY++);
-            Console.WriteLine($"Player {player.Name}, do you want to buy {Name}? (Y/N)");
+            Console.WriteLine($"Player {player.Name}, do you want to buy {Name} for {Price}? (Y/N)");
 
             ConsoleKeyInfo keyInfo = Console.ReadKey(true);
             if (keyInfo.Key == ConsoleKey.Y)
@@ -61,28 +61,38 @@ class RailroadTale : PropertyTale, IPurchasable
                     BuyTale(player);
                     Console.SetCursorPosition(120, cursorY++);
                     Console.WriteLine($"{player.Name} bought {Name} for {Price}.");
+                    Console.SetCursorPosition(120, cursorY++);
+                    System.Console.WriteLine("Press any key to continue");
+                    keyInfo = Console.ReadKey(true);
+
                 }
                 else
                 {
                     Console.SetCursorPosition(120, cursorY++);
                     Console.WriteLine($"{player.Name} doesn't have enough money to buy {Name}.");
+                    Console.SetCursorPosition(120, cursorY++);
+                    System.Console.WriteLine("Press any key to continue");
+                    keyInfo = Console.ReadKey(true);
                 }
             }
             else
             {
                 Console.SetCursorPosition(120, cursorY++);
                 Console.WriteLine($"{player.Name} decided not to buy {Name}.");
+                Console.SetCursorPosition(120, cursorY++);
+                System.Console.WriteLine("Press any key to continue");
+                keyInfo = Console.ReadKey(true);
             }
         }
         else if (owner != null && owner != player)
         {
             Console.SetCursorPosition(120, cursorY++);
             player.PayRentForRailroadTale();
-        }
-        else if (player == owner)
-        {
             Console.SetCursorPosition(120, cursorY++);
-            Console.WriteLine($"Player {player.Name} already owns {Name}.");
+            System.Console.WriteLine($"Player {player.Name} paid player {owner.Name} rent {player.rentToPay} for {Name} tale");
+            Console.SetCursorPosition(120, cursorY++);
+            System.Console.WriteLine("Press any key to continue");
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
         }
         
         player.NextStep();

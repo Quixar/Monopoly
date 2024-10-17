@@ -40,7 +40,7 @@ class Map : IEnumerable
         map.Add(new ChanceTale());
         map.Add(new TaleWithHouse("Euston", 100, 6, 30, 90, 270, 400, 550, 50));
         map.Add(new TaleWithHouse("Pentonville", 120, 8, 40, 100, 300, 450, 600, 50));
-        map.Add(new JailTale("Jail"));
+        map.Add(new ChanceTale());
         map.Add(new TaleWithHouse("Pall", 140, 10, 50, 150, 450, 625, 750, 100));
         map.Add(new UtilityTale("ECompany"));
         map.Add(new TaleWithHouse("Whitehall", 140, 10, 50, 150, 450, 625, 750, 100));
@@ -50,7 +50,7 @@ class Map : IEnumerable
         map.Add(new CommunityChestTale());
         map.Add(new TaleWithHouse("Tennessee", 180, 14, 70, 200, 550, 750, 950, 100));
         map.Add(new TaleWithHouse("New York", 200, 16, 80, 220, 600, 800, 1000, 100));
-        map.Add(new ParkingTale("Parking"));
+        map.Add(new ChanceTale());
         map.Add(new TaleWithHouse("Kentucky", 220, 18, 90, 250, 700, 875, 1050, 150));
         map.Add(new ChanceTale());
         map.Add(new TaleWithHouse("Indiana", 220, 18, 90, 250, 700, 875, 1050, 150));
@@ -60,7 +60,7 @@ class Map : IEnumerable
         map.Add(new TaleWithHouse("Ventnor", 260, 22, 110, 330, 800, 975, 1150, 150));
         map.Add(new UtilityTale("WaterWorks"));
         map.Add(new TaleWithHouse("Marvin", 280, 24, 120, 360, 850, 1025, 1200, 150));
-        map.Add(new JailTale("Jail"));
+        map.Add(new ChanceTale());
         map.Add(new TaleWithHouse("Pacific", 300, 26, 130, 390, 900, 1100, 1275, 200));
         map.Add(new TaleWithHouse("Carolina", 300, 26, 130, 390, 900, 1100, 1275, 200));
         map.Add(new CommunityChestTale());

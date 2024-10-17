@@ -7,11 +7,13 @@ class Player
     public bool isBankrupt;
     public bool isInJail;
     public string Name { get; set; }
-    int turnsToSkip;
+    public int turnsToSkip;
+    public int rentToPay;
     public Player(Map map, string name)
     {
+        rentToPay = 0;
         Name = name;
-        wallet = new Wallet(1300);
+        wallet = new Wallet(1100);
         isBankrupt = false;
         this.map = map;
         currentPosition = 0;
@@ -86,7 +88,6 @@ class Player
     }
     public void PayRentForUtilityTale()
     {
-        int rentToPay = 0;
         if (map[currentPosition] is UtilityTale utility && utility.owner != null && utility.owner != this)
         {
             if (utility.owner.GetUtilityCount() == 1)
@@ -170,14 +171,13 @@ class Player
     }
     public void TransferProperty(Player creditor)
     {
-        foreach (PropertyTale tale in map)
+        foreach (var tale in map)
         {
-            if (tale.owner == this)
+            if (tale is PropertyTale propertyTale && propertyTale.owner == this)
             {
-                tale.owner = creditor;
+                propertyTale.owner = creditor;
             }
         }
-        creditor.wallet.AmountMoney += this.wallet.AmountMoney;
         wallet.AmountMoney = 0;
     }
     public void DeclareBankrupt(Player creditor)

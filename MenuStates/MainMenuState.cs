@@ -39,6 +39,7 @@ class MainMenuState : IState
     public void Render()
     {
         Console.Clear();
+        Console.CursorVisible = false;
         string title = "MONOPOLY";
         Console.SetCursorPosition((Console.WindowWidth - title.Length) / 2, Console.WindowHeight / 4);
         Console.WriteLine(title);

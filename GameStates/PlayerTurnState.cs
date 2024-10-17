@@ -7,7 +7,7 @@ class PlayerTurnState : IState
         int cursorY = 15;
         Console.SetCursorPosition(120, cursorY++);
         Console.WriteLine($"It's {currentPlayer.Name}'s turn!");
-        currentPlayer.NextStep();
+        //currentPlayer.NextStep();
 
         game.map[currentPlayer.currentPosition].OnStep(currentPlayer);
 

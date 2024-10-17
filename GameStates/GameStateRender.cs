@@ -40,22 +40,35 @@ class GameStateRenderer
         Console.SetCursorPosition(120, cursorY++);
         Console.WriteLine($"{currentTale.Name}: {currentPlayer.Name}");
 
-        if (currentTale is TaleWithHouse houseTale)
+        if (currentTale is PropertyTale propertyTale)
         {
-            Console.SetCursorPosition(120, cursorY++);
-            Console.WriteLine($"Price: {houseTale.Price}$");
-            Console.SetCursorPosition(120, cursorY++);
-            Console.WriteLine($"Houses: {houseTale.houses.Count}");
-
-            if (houseTale.hotel == null)
+            if(propertyTale.owner == null)
             {
                 Console.SetCursorPosition(120, cursorY++);
-                Console.WriteLine($"Hotel: 0");
+                Console.WriteLine($"Owner: none");
             }
-            else
+            else if (propertyTale.owner != null)
             {
                 Console.SetCursorPosition(120, cursorY++);
-                Console.WriteLine($"Hotel: 1");
+                Console.WriteLine($"Owner: {propertyTale.owner.Name}");
+            }
+            Console.SetCursorPosition(120, cursorY++);
+            Console.WriteLine($"Price: {propertyTale.Price}$");
+            if(propertyTale is TaleWithHouse houseTale)
+            {
+                Console.SetCursorPosition(120, cursorY++);
+                Console.WriteLine($"Houses: {houseTale.houses.Count}");
+
+                if (houseTale.hotel == null)
+                {
+                    Console.SetCursorPosition(120, cursorY++);
+                    Console.WriteLine($"Hotel: 0");
+                }
+                else
+                {
+                    Console.SetCursorPosition(120, cursorY++);
+                    Console.WriteLine($"Hotel: 1");
+                }
             }
         }
     }
