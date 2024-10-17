@@ -7,7 +7,13 @@ class StartTale : EventTale
 
     public override void OnStep(Player player)
     {
+        int cursorY = 16;
+
         player.wallet.AmountMoney += 200;
+
+        Console.SetCursorPosition(120, cursorY++);
+        Console.WriteLine($"Player {player.Name} received 200$.");
+
         player.NextStep();
     }
 }

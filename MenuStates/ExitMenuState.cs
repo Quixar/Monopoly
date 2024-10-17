@@ -1,6 +1,6 @@
-class ExitMenuState : IMenuState
+class ExitMenuState : IState
 {
-    public void HandleInput(Menu menu)
+    public void HandleInput(Game menu)
     {
         Environment.Exit(0);
     }

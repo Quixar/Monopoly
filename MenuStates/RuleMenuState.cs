@@ -1,12 +1,12 @@
-class RulesMenuState : IMenuState
+class RuleMenuState : IState
 {
-    public void HandleInput(Menu menu)
+    public void HandleInput(Game game)
     {
         ConsoleKeyInfo keyInfo = Console.ReadKey(true);
 
         if (keyInfo.Key == ConsoleKey.Escape)
         {
-            menu.ChangeState(new MainMenuState());
+            game.ChangeState(new MainMenuState());
         }
     }
 
@@ -29,5 +29,4 @@ class RulesMenuState : IMenuState
             Console.WriteLine(lines[i]);
         }
     }
-
 }

@@ -34,6 +34,10 @@ class TaleWithHouse : PropertyTale, IPurchasable
                 buyer.wallet.AmountMoney -= Price;
                 owner = buyer;
             }
+            else
+            {
+                System.Console.WriteLine($"Player {buyer.Name} doenst have enough money to buy {Name}");
+            }
         }
     }
 
@@ -43,6 +47,10 @@ class TaleWithHouse : PropertyTale, IPurchasable
         {
             buyer.wallet.AmountMoney -= Price;
             houses.Add(new House());
+        }
+        else
+        {
+            System.Console.WriteLine($"Player {buyer.Name} doenst have enough money to buy house");
         }
     }
 
@@ -54,6 +62,10 @@ class TaleWithHouse : PropertyTale, IPurchasable
             {
                 buyer.wallet.AmountMoney -= Price;
                 hotel = new Hotel();
+            }
+            else
+            {
+                System.Console.WriteLine($"Plyaer {buyer.Name} doesnt have enough money to buy hotel");
             }
         }
     }
@@ -73,24 +85,23 @@ class TaleWithHouse : PropertyTale, IPurchasable
 
     public override void OnStep(Player player)
     {
+        int cursorY = 16;
+
         if (owner == null)
         {
+            Console.SetCursorPosition(120, cursorY++);
             Console.WriteLine($"Player {player.Name}, do you want to buy {Name} for {Price}? (Y/N)");
 
             ConsoleKeyInfo keyInfo = Console.ReadKey(true);
 
             if (keyInfo.Key == ConsoleKey.Y)
             {
-                if (player.wallet.AmountMoney >= Price)
-                {
-                    BuyTale(player);
-                }
-                else
-                {
-                }
+                BuyTale(player);
             }
             else if (keyInfo.Key == ConsoleKey.N)
             {
+                Console.SetCursorPosition(120, cursorY++);
+                System.Console.WriteLine($"Player {player.Name} decided not to buy {Name} tale");
             }
         }
         else if (owner != null && owner != player)
@@ -99,21 +110,46 @@ class TaleWithHouse : PropertyTale, IPurchasable
         }
         else if (player == owner)
         {
-            Console.WriteLine($"Player {player.Name}, do you want to buy a house on {Name}? (Y/N)");
-
-            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-
-            if (keyInfo.Key == ConsoleKey.Y)
+            if (houses.Count < maxHouses)
             {
-                BuyHouse(player);
-                Console.WriteLine($"{player.Name} bought a house on {Name}.");
+                Console.SetCursorPosition(120, cursorY++);
+                Console.WriteLine($"Player {player.Name}, do you want to buy a house on {Name} tale? (Y/N)");
+
+                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+                if (keyInfo.Key == ConsoleKey.Y)
+                {
+                    BuyHouse(player);
+                    Console.SetCursorPosition(120, cursorY++);
+                    Console.WriteLine($"{player.Name} bought a house on {Name}.");
+                }
+                else if (keyInfo.Key == ConsoleKey.N)
+                {
+                    Console.SetCursorPosition(120, cursorY++);
+                    Console.WriteLine($"{player.Name} decided not to buy a house on {Name}.");
+                }
             }
-            else if (keyInfo.Key == ConsoleKey.N)
+            else if (houses.Count == maxHouses && hotel == null)
             {
-                Console.WriteLine($"{player.Name} decided not to buy a house on {Name}.");
+                Console.SetCursorPosition(120, cursorY++);
+                Console.WriteLine($"Player {player.Name}, do you want to buy a hotel on {Name}? (Y/N)");
+
+                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+                if (keyInfo.Key == ConsoleKey.Y)
+                {
+                    BuyHotel(player);
+                    Console.SetCursorPosition(120, cursorY++);
+                    Console.WriteLine($"{player.Name} bought a hotel on {Name}.");
+                }
+
+                else if (keyInfo.Key == ConsoleKey.N)
+                {
+                    Console.SetCursorPosition(120, cursorY++);
+                    Console.WriteLine($"{player.Name} decided not to buy a hotel on {Name}.");
+                }
             }
         }
-
         player.NextStep();
     }
 }

@@ -1,39 +1,33 @@
 using System;
 using System.Collections;
 using System.Net.Mail;
-
 class Map : IEnumerable
 {
     public List<Tale> map;
-
     public Tale this[int index]
     {
         get
         {
             if(index >= 0 && index < map.Count)
             {
-                return map[index];
+                return map[index % map.Count];
             }
-            throw new ArgumentOutOfRangeException("Invalid index");
+            throw new ArgumentOutOfRangeException("index");
         }
     }
-
     public Map()
     {
         map = new List<Tale>();
         InitMap();
     }
-
     public MapEnumerator GetEnumerator()
     {
         return new MapEnumerator(map);
     }
-
     IEnumerator IEnumerable.GetEnumerator()
     {
         return GetEnumerator();
     }
-
     public void InitMap()
     {
         map.Add(new StartTale("Start"));

@@ -1,33 +1,36 @@
-class MainMenuState : IMenuState
+using System.ComponentModel.Design;
+
+class MainMenuState : IState
 {
     int selectedIndex = 0;
     string[] menuOptions = { "Play", "Rules", "Exit"};
 
-    public void HandleInput(Menu menu)
+    public void HandleInput(Game game)
     {
         ConsoleKeyInfo keyInfo = Console.ReadKey(true);
 
-        if (keyInfo.Key == ConsoleKey.UpArrow)
+        if(keyInfo.Key == ConsoleKey.UpArrow)
         {
-            selectedIndex = (selectedIndex == 0) ? menuOptions.Length - 1 : selectedIndex - 1;
+            selectedIndex = (selectedIndex == 0) ? menuOptions.Length - 1: selectedIndex - 1;
         }
+
         else if (keyInfo.Key == ConsoleKey.DownArrow)
         {
             selectedIndex = (selectedIndex == menuOptions.Length - 1) ? 0 : selectedIndex + 1;
         }
+
         else if (keyInfo.Key == ConsoleKey.Enter)
         {
             switch (selectedIndex)
             {
                 case 0:
-                    // To Do сделать состояние перехода в новую игру
-                    Console.WriteLine("Переход к игре...");
+                    game.ChangeState(new StartGameState());
                     break;
                 case 1:
-                    menu.ChangeState(new RulesMenuState());
+                    game.ChangeState(new RuleMenuState());
                     break;
                 case 2:
-                    menu.ChangeState(new ExitMenuState());
+                    game.ChangeState(new ExitMenuState());
                     break;
             }
         }
@@ -44,7 +47,7 @@ class MainMenuState : IMenuState
         {
             if (i == selectedIndex)
             {
-                Console.ForegroundColor = ConsoleColor.Cyan;  // Выделение выбранного пункта
+                Console.ForegroundColor = ConsoleColor.Cyan;
             }
             else
             {

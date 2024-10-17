@@ -46,35 +46,45 @@ class RailroadTale : PropertyTale, IPurchasable
     }
     public override void OnStep(Player player)
     {
+        int cursorY = 16;
+
         if (owner == null)
         {
-            Console.WriteLine($"Player {player.Name}, do you want to buy {Name} for {Price}? (Y/N)");
+            Console.SetCursorPosition(120, cursorY++);
+            Console.WriteLine($"Player {player.Name}, do you want to buy {Name}? (Y/N)");
+
             ConsoleKeyInfo keyInfo = Console.ReadKey(true);
             if (keyInfo.Key == ConsoleKey.Y)
             {
                 if (player.wallet.AmountMoney >= Price)
                 {
                     BuyTale(player);
+                    Console.SetCursorPosition(120, cursorY++);
                     Console.WriteLine($"{player.Name} bought {Name} for {Price}.");
                 }
                 else
                 {
+                    Console.SetCursorPosition(120, cursorY++);
                     Console.WriteLine($"{player.Name} doesn't have enough money to buy {Name}.");
                 }
             }
             else
             {
+                Console.SetCursorPosition(120, cursorY++);
                 Console.WriteLine($"{player.Name} decided not to buy {Name}.");
             }
         }
         else if (owner != null && owner != player)
         {
+            Console.SetCursorPosition(120, cursorY++);
             player.PayRentForRailroadTale();
         }
         else if (player == owner)
         {
+            Console.SetCursorPosition(120, cursorY++);
             Console.WriteLine($"Player {player.Name} already owns {Name}.");
         }
+        
         player.NextStep();
     }
 }

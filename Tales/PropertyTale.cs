@@ -23,14 +23,16 @@ class PropertyTale : Tale, IPurchasable
         }
     }
 
-    public void SellTale(Player player)
+    public void SellTale(Player buyer, Player seller)
     {
-        if (owner == player)
+        if (owner != null)
         {
-            player.wallet.AmountMoney += PropertySellPrice;
-            owner = null;        }
-        else
-        {
+            if (buyer.wallet.AmountMoney >= PropertySellPrice)
+            {
+                buyer.wallet.AmountMoney -= PropertySellPrice;
+                seller.wallet.AmountMoney += PropertySellPrice;
+                owner = buyer;
+            }
         }
     }
 
